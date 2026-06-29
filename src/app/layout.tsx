@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "NP Solution GmbH – Automation · Digitalisierung · Marketing",
   description:
     "NP Solution GmbH – Ihr Partner für intelligente Automatisierung, digitale Transformation und Performance Marketing in Liechtenstein.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
