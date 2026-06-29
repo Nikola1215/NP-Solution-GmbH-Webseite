@@ -653,6 +653,20 @@ export default function Home() {
             <a href="#marketing"       className="hover:text-white transition-colors">Marketing</a>
           </div>
           <div className="flex flex-col items-center md:items-end gap-2">
+            <a
+              href="https://www.instagram.com/np_solution.li"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="NP Solution auf Instagram"
+              className="text-white hover:text-[#FF5F00] transition-colors"
+              style={{ transition: "color 0.2s ease" }}
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4.5"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
             <p className="text-sm text-gray-600">© 2026 NP Solution GmbH</p>
             <div className="flex gap-4 text-xs text-gray-600">
               <Link href="/impressum"   className="hover:text-gray-400 transition-colors">Impressum</Link>
