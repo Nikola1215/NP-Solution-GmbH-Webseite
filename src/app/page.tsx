@@ -319,7 +319,7 @@ export default function Home() {
             {/* Left: portrait photo + name */}
             <ScaleIn className="flex flex-col items-center gap-5">
               <div
-                className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden"
+                className="relative w-full max-w-[220px] lg:max-w-none mx-auto aspect-[3/4] rounded-2xl overflow-hidden"
                 style={{ boxShadow: "0 0 0 2px rgba(255,95,0,0.35), 0 0 32px -4px rgba(255,95,0,0.25)" }}
               >
                 <Image
@@ -453,11 +453,11 @@ export default function Home() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">So arbeite ich</h2>
           </FadeUp>
-          <StaggerContainer className="grid grid-cols-2 gap-4 md:flex md:flex-row md:items-stretch md:gap-0" stagger={0.15}>
+          <StaggerContainer className="grid grid-cols-2 [grid-auto-rows:1fr] gap-4 md:flex md:flex-row md:items-stretch md:gap-0" stagger={0.15}>
             {prozessSteps.map((step, i) => (
-              <StaggerItem key={step.title} className="flex flex-col md:flex-row items-center md:flex-1">
-                <div className="flex-1 w-full bg-[#111] border border-white/5 rounded-2xl p-5 md:p-7 text-center hover:border-brand/20 transition-colors">
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-brand/10 flex items-center justify-center text-brand mx-auto mb-4">
+              <StaggerItem key={step.title} className="h-full md:flex md:flex-row md:items-stretch md:flex-1">
+                <div className="h-full w-full bg-[#111] border border-white/5 rounded-2xl p-5 md:p-7 flex flex-col items-center text-center hover:border-brand/20 transition-colors">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-brand/10 flex items-center justify-center text-brand mb-4 shrink-0">
                     {step.icon}
                   </div>
                   <div className="text-xs text-brand font-mono font-medium mb-2">0{i + 1}</div>
@@ -465,7 +465,7 @@ export default function Home() {
                   <p className="text-gray-400 text-xs md:text-sm leading-relaxed">{step.desc}</p>
                 </div>
                 {i < prozessSteps.length - 1 && (
-                  <div className="hidden md:flex items-center justify-center md:px-3 shrink-0">
+                  <div className="hidden md:flex items-center justify-center px-3 shrink-0">
                     <ArrowRight className="w-5 h-5 text-brand/25" />
                   </div>
                 )}
@@ -647,7 +647,7 @@ export default function Home() {
               Undera Forst 16 · 9494 Schaan · Liechtenstein
             </address>
           </div>
-          <div className="flex gap-6 text-sm text-gray-500">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-500">
             <a href="#automation"      className="hover:text-white transition-colors">Systemtechnik</a>
             <a href="#digitalisierung" className="hover:text-white transition-colors">Smart Automation</a>
             <a href="#marketing"       className="hover:text-white transition-colors">Marketing</a>
