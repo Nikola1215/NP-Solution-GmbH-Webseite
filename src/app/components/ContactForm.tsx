@@ -8,6 +8,7 @@ type FormData = {
   phone: string;
   subject: string;
   message: string;
+  website: string; // honeypot
 };
 
 type Errors = Partial<Record<"name" | "email" | "message", string>>;
@@ -24,11 +25,12 @@ const field =
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>({
-    name: "", email: "", phone: "", subject: SUBJECTS[3], message: "",
+    name: "", email: "", phone: "", subject: SUBJECTS[3], message: "", website: "",
   });
-  const [errors, setErrors]   = useState<Errors>({});
-  const [loading, setLoading] = useState(false);
-  const [sent, setSent]       = useState(false);
+  const [errors, setErrors]     = useState<Errors>({});
+  const [loading, setLoading]   = useState(false);
+  const [sent, setSent]         = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
 
   function set<K extends keyof FormData>(key: K, val: string) {
     setForm(f => ({ ...f, [key]: val }));
@@ -49,11 +51,34 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!validate()) return;
+
+    // Honeypot: Bot hat das versteckte Feld ausgefüllt → still ignorieren
+    if (form.website) {
+      setSent(true);
+      return;
+    }
+
     setLoading(true);
-    // TODO: replace with real API call (e.g. Resend, Formspree, or your own endpoint)
-    await new Promise(r => setTimeout(r, 900));
-    setSent(true);
-    setLoading(false);
+    setApiError(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setApiError(data.error ?? "Etwas ist schiefgelaufen. Bitte versuche es erneut.");
+      } else {
+        setSent(true);
+      }
+    } catch {
+      setApiError("Netzwerkfehler. Bitte versuche es erneut.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (sent) {
@@ -72,6 +97,20 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="max-w-[640px] mx-auto space-y-5">
+
+      {/* Honeypot – für Bots unsichtbar */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none", tabIndex: -1 } as React.CSSProperties}>
+        <label htmlFor="website">Website leer lassen</label>
+        <input
+          id="website"
+          type="text"
+          name="website"
+          value={form.website}
+          onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
+          autoComplete="off"
+          tabIndex={-1}
+        />
+      </div>
 
       {/* Row 1: Name + Email */}
       <div className="grid sm:grid-cols-2 gap-5">
@@ -142,6 +181,12 @@ export default function ContactForm() {
         />
         {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
       </div>
+
+      {apiError && (
+        <div role="alert" className="rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+          {apiError}
+        </div>
+      )}
 
       <button
         type="submit"
