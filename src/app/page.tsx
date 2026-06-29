@@ -490,9 +490,8 @@ export default function Home() {
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-5">Ihr regionaler Partner</h2>
                 <p className="text-gray-400 text-lg leading-relaxed">
-                  Die NP Solution GmbH hat ihren Sitz in Schaan, Liechtenstein, und betreut Kunden
-                  in Liechtenstein sowie in der gesamten Schweiz. Kurze Kommunikationswege,
-                  persönliche Betreuung und praxisnahe Lösungen stehen dabei im Mittelpunkt.
+                  NP Solution GmbH – ansässig in Schaan, Liechtenstein. Tätig in Liechtenstein
+                  und der Schweiz.
                 </p>
               </div>
               <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
@@ -557,7 +556,12 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-5 mb-12">
 
             {/* Adresse */}
-            <div className="bg-[#111] border border-white/5 rounded-xl p-6 space-y-3">
+            <a
+              href="https://maps.google.com/?q=Undera+Forst+16,+9494+Schaan,+Liechtenstein"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#111] border border-white/5 hover:border-brand/50 rounded-xl p-6 space-y-3 transition-colors block"
+            >
               <div className="w-9 h-9 rounded-lg bg-brand/10 flex items-center justify-center text-brand">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -571,7 +575,7 @@ export default function Home() {
                 9494 Schaan<br />
                 Liechtenstein
               </address>
-            </div>
+            </a>
 
             {/* WhatsApp & Telefon */}
             <div className="group bg-[#111] border border-white/5 hover:border-[#25D366]/50 rounded-xl p-6 transition-colors flex flex-col gap-3">
