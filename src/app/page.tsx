@@ -223,7 +223,7 @@ export default function Home() {
             {(
               [
                 ["7+",         "Jahre Berufserfahrung"],
-                ["CH & FL",    "Regional tätig"],
+                ["FL & CH",    "Regional tätig"],
                 ["Persönlich", "Direkter Ansprechpartner"],
                 ["Individuell","Massgeschneiderte Lösungen"],
               ] as [string, string][]
@@ -516,7 +516,7 @@ export default function Home() {
             {/* Google Maps */}
             <div className="pl-6 mt-10">
               <iframe
-                src="https://maps.google.com/maps?q=47.1785107,9.518759&z=16&output=embed"
+                src="https://www.google.com/maps?q=Undera+Forst+16,+9494+Schaan,+Liechtenstein&output=embed"
                 width="100%"
                 height="400"
                 loading="lazy"
@@ -557,7 +557,7 @@ export default function Home() {
 
             {/* Adresse */}
             <a
-              href="https://maps.google.com/?q=Undera+Forst+16,+9494+Schaan,+Liechtenstein"
+              href="https://www.google.com/maps?q=Undera+Forst+16,+9494+Schaan,+Liechtenstein"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#111] border border-white/5 hover:border-brand/50 rounded-xl p-6 space-y-3 transition-colors block"
@@ -608,17 +608,20 @@ export default function Home() {
             </div>
 
             {/* E-Mail */}
-            <div className="bg-[#111] border border-white/5 rounded-xl p-6 space-y-3">
+            <a
+              href="mailto:info@np-solution.li"
+              className="bg-[#111] border border-white/5 hover:border-brand/50 rounded-xl p-6 space-y-3 transition-colors block"
+            >
               <div className="w-9 h-9 rounded-lg bg-brand/10 flex items-center justify-center text-brand">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                 </svg>
               </div>
               <p className="text-xs text-gray-500 uppercase tracking-wider font-medium">E-Mail</p>
-              <a href="mailto:info@np-solution.li" className="block text-sm text-brand hover:text-[#ff7a2a] transition-colors font-medium">
+              <span className="block text-sm text-brand font-medium">
                 info@np-solution.li
-              </a>
-            </div>
+              </span>
+            </a>
 
           </div>
 
