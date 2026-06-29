@@ -8,7 +8,6 @@ type FormData = {
   phone: string;
   subject: string;
   message: string;
-  website: string; // honeypot
 };
 
 type Errors = Partial<Record<"name" | "email" | "message", string>>;
@@ -25,7 +24,7 @@ const field =
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>({
-    name: "", email: "", phone: "", subject: SUBJECTS[3], message: "", website: "",
+    name: "", email: "", phone: "", subject: SUBJECTS[3], message: "",
   });
   const [errors, setErrors]     = useState<Errors>({});
   const [loading, setLoading]   = useState(false);
@@ -52,25 +51,25 @@ export default function ContactForm() {
     e.preventDefault();
     if (!validate()) return;
 
-    // Honeypot: Bot hat das versteckte Feld ausgefüllt → still ignorieren
-    if (form.website) {
-      setSent(true);
-      return;
-    }
-
     setLoading(true);
     setApiError(null);
 
+    const payload = new FormData();
+    payload.append("name", form.name);
+    payload.append("email", form.email);
+    payload.append("phone", form.phone);
+    payload.append("subject", form.subject);
+    payload.append("message", form.message);
+
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formspree.io/f/xkolzegd", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: payload,
+        headers: { Accept: "application/json" },
       });
 
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        setApiError(data.error ?? "Etwas ist schiefgelaufen. Bitte versuche es erneut.");
+        setApiError("Etwas ist schiefgelaufen. Bitte versuche es erneut.");
       } else {
         setSent(true);
       }
@@ -98,19 +97,8 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} noValidate className="max-w-[640px] mx-auto space-y-5">
 
-      {/* Honeypot – für Bots unsichtbar */}
-      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none", tabIndex: -1 } as React.CSSProperties}>
-        <label htmlFor="website">Website leer lassen</label>
-        <input
-          id="website"
-          type="text"
-          name="website"
-          value={form.website}
-          onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
-          autoComplete="off"
-          tabIndex={-1}
-        />
-      </div>
+      {/* Honeypot – Formspree erkennt _gotcha automatisch */}
+      <input type="text" name="_gotcha" style={{ display: "none" }} aria-hidden="true" />
 
       {/* Row 1: Name + Email */}
       <div className="grid sm:grid-cols-2 gap-5">
