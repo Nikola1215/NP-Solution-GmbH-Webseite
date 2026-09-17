@@ -110,14 +110,25 @@ export default function DatenschutzPage() {
             <p className="text-sm text-gray-500 mt-1">Rechtsgrundlage: Art. 6 Abs. 1 lit. b oder lit. f DSGVO</p>
           </DSSection>
 
-          <DSSection number="6." title="Cookies">
+          <DSSection number="6." title="Run-Club-Anmeldung">
+            <p>
+              Bei der Anmeldung zur Warteliste des NP Run Club (Seite /run-club) verarbeiten wir:
+              Vorname, Nachname, E-Mail-Adresse sowie optional Unternehmen und Laufniveau. Diese
+              Angaben nutzen wir ausschliesslich, um Sie zu gegebener Zeit über den Start des NP
+              Run Club zu informieren. Die Übermittlung erfolgt technisch über den Formular-Anbieter
+              Formspree (siehe Ziffer 4).
+            </p>
+            <p className="text-sm text-gray-500 mt-1">Rechtsgrundlage: Art. 6 Abs. 1 lit. a oder lit. f DSGVO</p>
+          </DSSection>
+
+          <DSSection number="7." title="Cookies">
             <p>
               Diese Webseite verwendet ausschliesslich technisch notwendige Cookies. Es findet
               keine Analyse des Nutzerverhaltens zu Werbe- oder Marketingzwecken statt.
             </p>
           </DSSection>
 
-          <DSSection number="7." title="Google Maps">
+          <DSSection number="8." title="Google Maps">
             <p>
               Zur Darstellung des Standorts kann Google Maps verwendet werden.
             </p>
@@ -126,20 +137,20 @@ export default function DatenschutzPage() {
             </p>
           </DSSection>
 
-          <DSSection number="8." title="Verlinkungen zu sozialen Netzwerken">
+          <DSSection number="9." title="Verlinkungen zu sozialen Netzwerken">
             <p>
               Unsere Webseite enthält Verlinkungen zu Instagram und WhatsApp. Beim Anklicken
               verlassen Sie unsere Webseite.
             </p>
           </DSSection>
 
-          <DSSection number="9." title="Datensicherheit">
+          <DSSection number="10." title="Datensicherheit">
             <p>
               Diese Webseite nutzt SSL/TLS-Verschlüsselung zur sicheren Datenübertragung.
             </p>
           </DSSection>
 
-          <DSSection number="10." title="Ihre Rechte">
+          <DSSection number="11." title="Ihre Rechte">
             <p>Sie haben das Recht auf:</p>
             <ul className="mt-3 space-y-2">
               {[
@@ -165,7 +176,7 @@ export default function DatenschutzPage() {
             </p>
           </DSSection>
 
-          <DSSection number="11." title="Beschwerderecht">
+          <DSSection number="12." title="Beschwerderecht">
             <address className="not-italic space-y-1">
               <p className="text-white font-medium">Datenschutzstelle Fürstentum Liechtenstein</p>
               <p>Städtle 38</p>
@@ -173,7 +184,7 @@ export default function DatenschutzPage() {
             </address>
           </DSSection>
 
-          <DSSection number="12." title="Änderungen">
+          <DSSection number="13." title="Änderungen">
             <p>
               Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen.
             </p>
