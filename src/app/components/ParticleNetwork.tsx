@@ -43,6 +43,8 @@ export default function ParticleNetwork() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     // ── HiDPI-aware sizing ────────────────────────────────────────────────────
     let W = 0;
     let H = 0;
@@ -96,42 +98,45 @@ export default function ParticleNetwork() {
     const tick = () => {
       ctx.clearRect(0, 0, W, H);
 
-      // Update
-      for (const p of particles) {
-        // Mouse attraction
-        const dx = mx - p.x;
-        const dy = my - p.y;
-        const dSq = dx * dx + dy * dy;
-        if (dSq < MOUSE_DIST * MOUSE_DIST && dSq > 0.001) {
-          const d  = Math.sqrt(dSq);
-          const f  = MOUSE_FORCE * (1 - d / MOUSE_DIST);
-          p.vx += (dx / d) * f;
-          p.vy += (dy / d) * f;
+      // Update (skipped entirely when the user prefers reduced motion —
+      // particles then render once as a static frame, no animation loop)
+      if (!prefersReducedMotion) {
+        for (const p of particles) {
+          // Mouse attraction
+          const dx = mx - p.x;
+          const dy = my - p.y;
+          const dSq = dx * dx + dy * dy;
+          if (dSq < MOUSE_DIST * MOUSE_DIST && dSq > 0.001) {
+            const d  = Math.sqrt(dSq);
+            const f  = MOUSE_FORCE * (1 - d / MOUSE_DIST);
+            p.vx += (dx / d) * f;
+            p.vy += (dy / d) * f;
+          }
+
+          // Speed cap (hard limit, keeps things organic)
+          const sp = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+          if (sp > SPEED_CAP) {
+            const scale = SPEED_CAP / sp;
+            p.vx *= scale;
+            p.vy *= scale;
+          }
+
+          // Gentle speed floor: nudge drifting particles back into motion
+          if (sp < BASE_SPEED * 0.3 && sp > 0.001) {
+            const scale = (BASE_SPEED * 0.3) / sp;
+            p.vx *= scale;
+            p.vy *= scale;
+          }
+
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Edge bounce
+          if (p.x - p.radius < 0)  { p.x = p.radius;    p.vx =  Math.abs(p.vx); }
+          if (p.x + p.radius > W)   { p.x = W - p.radius; p.vx = -Math.abs(p.vx); }
+          if (p.y - p.radius < 0)  { p.y = p.radius;    p.vy =  Math.abs(p.vy); }
+          if (p.y + p.radius > H)   { p.y = H - p.radius; p.vy = -Math.abs(p.vy); }
         }
-
-        // Speed cap (hard limit, keeps things organic)
-        const sp = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
-        if (sp > SPEED_CAP) {
-          const scale = SPEED_CAP / sp;
-          p.vx *= scale;
-          p.vy *= scale;
-        }
-
-        // Gentle speed floor: nudge drifting particles back into motion
-        if (sp < BASE_SPEED * 0.3 && sp > 0.001) {
-          const scale = (BASE_SPEED * 0.3) / sp;
-          p.vx *= scale;
-          p.vy *= scale;
-        }
-
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // Edge bounce
-        if (p.x - p.radius < 0)  { p.x = p.radius;    p.vx =  Math.abs(p.vx); }
-        if (p.x + p.radius > W)   { p.x = W - p.radius; p.vx = -Math.abs(p.vx); }
-        if (p.y - p.radius < 0)  { p.y = p.radius;    p.vy =  Math.abs(p.vy); }
-        if (p.y + p.radius > H)   { p.y = H - p.radius; p.vy = -Math.abs(p.vy); }
       }
 
       // Connections
@@ -160,7 +165,9 @@ export default function ParticleNetwork() {
         ctx.fill();
       }
 
-      raf = requestAnimationFrame(tick);
+      if (!prefersReducedMotion) {
+        raf = requestAnimationFrame(tick);
+      }
     };
 
     tick();
@@ -184,7 +191,7 @@ export default function ParticleNetwork() {
   return (
     <div
       ref={containerRef}
-      className="w-full h-[500px]"
+      className="w-full h-full"
       style={{
         opacity:    faded ? 1 : 0,
         transition: "opacity 1.2s ease",

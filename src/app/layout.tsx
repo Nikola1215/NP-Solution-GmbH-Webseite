@@ -7,9 +7,9 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NP Solution GmbH – Automation · Digitalisierung · Marketing",
+  title: "NP Solution GmbH – Industrieservice & Automation in Liechtenstein",
   description:
-    "NP Solution GmbH – Ihr Partner für intelligente Automatisierung, digitale Transformation und Performance Marketing in Liechtenstein.",
+    "NP Solution GmbH unterstützt Industrieunternehmen in Liechtenstein und der Schweiz bei Inbetriebnahme, elektrischen Arbeiten, Umbauten und Revisionen an Maschinen und Anlagen – ergänzt durch Smart Automation.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

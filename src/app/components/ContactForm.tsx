@@ -13,9 +13,8 @@ type FormData = {
 type Errors = Partial<Record<"name" | "email" | "message", string>>;
 
 const SUBJECTS = [
-  "Automation & Systemtechnik",
-  "Smart Automation & Digitalisierung",
-  "Digitales Marketing",
+  "Industrieservice & Automation",
+  "Smart Automation",
   "Allgemeine Anfrage",
 ];
 
@@ -24,7 +23,7 @@ const field =
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>({
-    name: "", email: "", phone: "", subject: SUBJECTS[3], message: "",
+    name: "", email: "", phone: "", subject: SUBJECTS[2], message: "",
   });
   const [errors, setErrors]     = useState<Errors>({});
   const [loading, setLoading]   = useState(false);
@@ -179,7 +178,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="flex items-center gap-2 bg-brand hover:bg-[#e05400] disabled:opacity-60 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-[0_0_40px_-8px_#FF5F00] w-full sm:w-auto justify-center"
+        className="flex items-center gap-2 bg-brand hover:bg-brand-hover disabled:opacity-60 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-[0_0_40px_-8px_#FF5F00] w-full sm:w-auto justify-center"
       >
         {loading ? "Wird gesendet…" : <>Nachricht senden <span aria-hidden>→</span></>}
       </button>

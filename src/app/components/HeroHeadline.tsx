@@ -31,20 +31,20 @@ export default function HeroHeadline() {
       ref={ref}
       className="text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[3.6rem] xl:text-7xl font-bold tracking-tight leading-[1.08] mb-6"
     >
-      Technik, die Prozesse{" "}
+      Industrieanlagen.{" "}
       <span
         className={sweepClass}
         style={{ "--sweep-delay": "0.3s" } as React.CSSProperties}
       >
-        vereinfacht.
+        In Betrieb.
       </span>
       <br className="hidden md:block" />
-      {" "}Lösungen, die{" "}
+      {" "}Umgebaut.{" "}
       <span
         className={sweepClass}
         style={{ "--sweep-delay": "0.8s" } as React.CSSProperties}
       >
-        voranbringen.
+        Weitergedacht.
       </span>
     </h1>
   );
