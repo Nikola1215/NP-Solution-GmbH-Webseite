@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import SitePageChrome from "../components/SitePageChrome";
 
 export const metadata: Metadata = {
-  title: "Datenschutzerklärung – NP Solution GmbH",
+  title: "Datenschutzerklärung",
   description: "Datenschutzerklärung der NP Solution GmbH, Schaan, Liechtenstein.",
+  alternates: { canonical: "/datenschutz" },
+  robots: { index: false, follow: true },
 };
 
 function BackLink() {

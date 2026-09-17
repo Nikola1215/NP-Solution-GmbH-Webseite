@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import SitePageChrome from "../components/SitePageChrome";
 
 export const metadata: Metadata = {
-  title: "Impressum – NP Solution GmbH",
+  title: "Impressum",
   description: "Impressum der NP Solution GmbH, Schaan, Liechtenstein.",
+  alternates: { canonical: "/impressum" },
+  robots: { index: false, follow: true },
 };
 
 function BackLink() {

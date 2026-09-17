@@ -2,10 +2,19 @@ import type { Metadata } from "next";
 import SitePageChrome from "../components/SitePageChrome";
 import RunClubForm from "../components/RunClubForm";
 
+const TITLE = "NP Run Club – Lunch Runs in Schaan";
+const DESCRIPTION =
+  "Der NP Run Club bringt Menschen aus dem Industriegebiet Schaan und der Umgebung für gemeinsame Lunch Runs zusammen. Jetzt auf die Warteliste eintragen.";
+
 export const metadata: Metadata = {
-  title: "NP Run Club – Lunch Runs in Schaan | NP Solution GmbH",
-  description:
-    "Der NP Run Club bringt Menschen aus dem Industriegebiet Schaan und der Umgebung für gemeinsame Lunch Runs zusammen. Jetzt auf die Warteliste eintragen.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/run-club" },
+  openGraph: {
+    url: "/run-club",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 export default function RunClubPage() {

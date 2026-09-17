@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import Hero from "./components/sections/Hero";
 import TrustBar from "./components/sections/TrustBar";
@@ -14,6 +15,19 @@ import Kontakt from "./components/sections/Kontakt";
 import SiteFooter from "./components/sections/SiteFooter";
 import WhatsAppButton from "./components/WhatsAppButton";
 import CookieBanner from "./components/CookieBanner";
+
+const DESCRIPTION =
+  "Automation, Inbetriebnahme und Industrieservice in Liechtenstein, im Rheintal und in der Ostschweiz: NP Solution GmbH aus Schaan unterstützt bei Anlagenumbauten, elektrischen Arbeiten und Smart-Automation-Lösungen für Industrieanlagen.";
+
+export const metadata: Metadata = {
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    url: "/",
+    title: "NP Solution GmbH – Industrieservice & Automation in Liechtenstein",
+    description: DESCRIPTION,
+  },
+};
 
 export default function Home() {
   return (
