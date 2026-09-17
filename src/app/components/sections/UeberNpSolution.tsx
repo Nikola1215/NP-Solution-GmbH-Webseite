@@ -20,7 +20,7 @@ function InitiativeIcon() {
 
 export default function UeberNpSolution() {
   return (
-    <section id="ueber" className="py-28 px-6 border-b border-white/5">
+    <section id="ueber" className="py-24 px-6 border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <FadeUp className="mb-12">
           <div className="flex items-center gap-3 mb-5">

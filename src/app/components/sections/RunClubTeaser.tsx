@@ -4,7 +4,7 @@ import { ArrowRight } from "../icons";
 
 export default function RunClubTeaser() {
   return (
-    <section className="py-20 px-6 border-b border-white/5 bg-gradient-to-br from-[#1a0f05] via-[#0c0c0c] to-[#0c0c0c]">
+    <section className="py-16 px-6 border-b border-white/5 bg-gradient-to-br from-[#1a0f05] via-[#0c0c0c] to-[#0c0c0c]">
       <div className="max-w-6xl mx-auto">
         <FadeUp>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 rounded-2xl border border-brand/20 bg-[#111]/60 px-8 py-10 md:px-12 md:py-12">

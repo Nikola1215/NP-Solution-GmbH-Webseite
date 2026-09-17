@@ -3,7 +3,7 @@ import { LocationPinIcon } from "../icons";
 
 export default function Kontakt() {
   return (
-    <section id="kontakt" className="py-28 px-6 bg-[#0c0c0c] border-t border-white/5">
+    <section id="kontakt" className="py-24 px-6 bg-[#0c0c0c] border-t border-white/5">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 bg-brand/10 border border-brand/20 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-8 tracking-widest uppercase">

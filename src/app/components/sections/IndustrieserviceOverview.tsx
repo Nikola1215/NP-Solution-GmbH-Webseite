@@ -29,9 +29,17 @@ const LEISTUNGEN = [
   "Dokumentation & Protokollierung",
 ];
 
+const SMART_AUTOMATION_TAGS = [
+  "Workflow-Automatisierung",
+  "Interne Webtools",
+  "Automatisierte Dokumente",
+  "Daten & Schnittstellen",
+  "Prozessdigitalisierung",
+];
+
 export default function IndustrieserviceOverview() {
   return (
-    <section id="leistungen" className="py-24 px-6 bg-[#0c0c0c] border-t border-b border-white/5">
+    <section id="leistungen" className="py-20 px-6 bg-[#0c0c0c] border-t border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <StaggerContainer className="grid md:grid-cols-5 gap-5 items-stretch" stagger={0.15}>
 
@@ -86,11 +94,20 @@ export default function IndustrieserviceOverview() {
                   <h3 className="text-xl font-semibold mb-3">Smart Automation</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
                     Schlanke digitale Lösungen für konkrete Prozesse – entwickelt, um Zeit zu
-                    sparen, Fehler zu reduzieren und wiederkehrende Arbeit zu vereinfachen.
+                    sparen, Fehler zu reduzieren und wiederkehrende Arbeit zu vereinfachen. Von
+                    automatisierten Workflows bis zu einfachen internen Tools verbindet NP
+                    Solution bestehende Abläufe mit smarten digitalen Werkzeugen.
                   </p>
+                  <ul className="flex flex-wrap gap-2 mt-5">
+                    {SMART_AUTOMATION_TAGS.map((t) => (
+                      <li key={t} className="text-xs text-gray-400 border border-white/10 rounded-full px-3 py-1.5">
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="mt-6 flex items-center gap-1.5 text-brand text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  Mehr erfahren <ArrowRight className="w-3 h-3" />
+                <div className="mt-6 flex items-center gap-1.5 text-brand text-sm font-medium">
+                  Mehr erfahren <ArrowRight className="w-4 h-4" />
                 </div>
               </a>
             </HoverLift>

@@ -3,7 +3,7 @@ import { LocationPinIcon } from "../icons";
 
 export default function Standort() {
   return (
-    <section className="py-28 px-6 border-b border-white/5">
+    <section className="py-24 px-6 border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <div className="relative overflow-hidden bg-[#111] border border-brand/15 rounded-2xl p-10 md:p-14">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-12">

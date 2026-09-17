@@ -5,11 +5,11 @@ import { CONTACT_HREF } from "../nav-links";
 
 export default function ProjektCta() {
   return (
-    <section className="py-20 px-6 border-b border-white/5">
+    <section className="py-16 px-6 border-b border-white/5">
       <div className="max-w-3xl mx-auto text-center">
         <FadeUp>
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">Projekt im Kopf?</h2>
-          <p className="text-gray-400 text-lg leading-relaxed mb-8">
+          <p className="text-gray-400 text-lg leading-relaxed mb-6">
             Kommen Sie auf einen Espresso in Schaan vorbei.
           </p>
           <Link

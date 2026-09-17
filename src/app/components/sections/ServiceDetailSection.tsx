@@ -28,7 +28,7 @@ export default function ServiceDetailSection({
 }) {
   const TextCol = reverse ? SlideFromRight : SlideFromLeft;
   return (
-    <section id={id} className="py-28 px-6 border-b border-white/5">
+    <section id={id} className="py-20 px-6 border-b border-white/5">
       <div className={`max-w-6xl mx-auto flex flex-col ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"} gap-16 items-start`}>
         <TextCol className="flex-1 space-y-5 lg:pt-2">
           <div className="flex items-center gap-3">

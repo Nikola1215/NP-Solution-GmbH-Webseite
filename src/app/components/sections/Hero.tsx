@@ -1,6 +1,5 @@
 import Link from "next/link";
 import HeroHeadline from "../HeroHeadline";
-import ParticleNetwork from "../ParticleNetwork";
 import ImagePlaceholder from "../ImagePlaceholder";
 import { HeroFade } from "../motion-primitives";
 import { ArrowRight } from "../icons";
@@ -9,8 +8,8 @@ import { CONTACT_HREF } from "../nav-links";
 export default function Hero() {
   return (
     <section className="dot-bg min-h-screen flex items-center pt-16">
-      <div className="max-w-6xl mx-auto px-6 py-24 w-full">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-8 mb-20">
+      <div className="max-w-6xl mx-auto px-6 py-20 w-full">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-8 mb-20">
           <div className="flex-1 max-w-2xl">
             <HeroFade delay={0.15} y={-12}>
               <div className="inline-flex items-center gap-2 bg-brand/10 border border-brand/20 text-brand text-xs font-medium px-4 py-1.5 rounded-full mb-8 tracking-wide">
@@ -47,18 +46,12 @@ export default function Hero() {
             </HeroFade>
           </div>
 
-          {/* Bildfläche rechts: dominiert visuell die Industrie-Identität (Platzhalter, siehe BRIEFING.md Punkt 5) */}
-          <div className="hidden lg:block flex-1 min-w-0 mt-[52px] w-full">
-            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
-              <div className="absolute inset-0">
-                <ParticleNetwork />
-              </div>
-              <ImagePlaceholder
-                label="Bildplatzhalter – Industrieanlage / Inbetriebnahme"
-                className="absolute inset-0"
-                overlay
-              />
-            </div>
+          {/* Bildfläche rechts: dominiert visuell die Industrie-Identität, nimmt die volle Höhe der Hero-Spalte ein (Platzhalter, siehe BRIEFING.md Punkt 5) */}
+          <div className="hidden lg:flex flex-1 min-w-0 w-full">
+            <ImagePlaceholder
+              label="Bildplatzhalter – Industrieanlage / Inbetriebnahme"
+              className="w-full h-full min-h-[520px] rounded-2xl"
+            />
           </div>
         </div>
       </div>

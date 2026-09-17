@@ -24,7 +24,7 @@ const PROJEKTE: ProjektKarte[] = [
 
 export default function Projekte() {
   return (
-    <section id="projekte" className="py-28 px-6 border-b border-white/5">
+    <section id="projekte" className="py-24 px-6 border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <FadeUp className="mb-14">
           <div className="flex items-center gap-3 mb-5">
@@ -40,7 +40,7 @@ export default function Projekte() {
               <HoverLift className="h-full">
                 <div className="group h-full rounded-2xl border border-white/5 hover:border-brand/30 bg-[#111]/60 hover:bg-[#111] overflow-hidden transition-colors">
                   <ImagePlaceholder
-                    label={`Bildplatzhalter – ${p.titel}`}
+                    label="Bilder folgen in Kürze"
                     className="aspect-video w-full"
                   />
                   <div className="p-6">

@@ -42,7 +42,7 @@ const STEPS: { title: string; desc: string; icon: React.ReactNode }[] = [
 
 export default function Arbeitsweise() {
   return (
-    <section className="py-28 px-6 bg-[#0c0c0c] border-t border-b border-white/5">
+    <section className="py-24 px-6 bg-[#0c0c0c] border-t border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <FadeUp className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-brand/10 border border-brand/20 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-widest uppercase">

@@ -9,7 +9,7 @@ const TRUST_ITEMS: [string, string][] = [
 
 export default function TrustBar() {
   return (
-    <section className="py-12 px-6 bg-[#0c0c0c] border-t border-b border-white/5">
+    <section className="py-10 px-6 bg-[#0c0c0c] border-t border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8" stagger={0.1}>
           {TRUST_ITEMS.map(([title, label]) => (
