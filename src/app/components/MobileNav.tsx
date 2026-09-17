@@ -1,13 +1,8 @@
 "use client";
 
 import { useState } from "react";
-
-const links = [
-  { href: "#automation", label: "Systemtechnik" },
-  { href: "#digitalisierung", label: "Smart Automation" },
-  { href: "#marketing", label: "Marketing" },
-  { href: "#kontakt", label: "Kontakt" },
-];
+import Link from "next/link";
+import { NAV_LINKS, CONTACT_HREF } from "./nav-links";
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -39,23 +34,23 @@ export default function MobileNav() {
         }}
       >
           <div className="flex flex-col gap-1 pt-4">
-            {links.map((l) => (
-              <a
+            {NAV_LINKS.map((l) => (
+              <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className="py-3 text-gray-300 hover:text-brand transition-colors border-b border-white/5 last:border-0"
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#kontakt"
+            <Link
+              href={CONTACT_HREF}
               onClick={() => setOpen(false)}
-              className="mt-4 text-center bg-brand hover:bg-[#e05400] text-white py-3 rounded-lg font-medium transition-colors"
+              className="mt-4 text-center bg-brand hover:bg-brand-hover text-white py-3 rounded-lg font-medium transition-colors"
             >
               Kontakt aufnehmen
-            </a>
+            </Link>
           </div>
       </div>
     </div>

@@ -1,14 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import MobileNav from "./MobileNav";
-
-const navLinks = [
-  { href: "#automation",     label: "Systemtechnik" },
-  { href: "#digitalisierung",label: "Smart Automation" },
-  { href: "#marketing",      label: "Marketing" },
-  { href: "#kontakt",        label: "Kontakt" },
-];
+import { NAV_LINKS, CONTACT_HREF } from "./nav-links";
 
 function ArrowRight({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -51,7 +46,7 @@ export default function Navbar() {
       }}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative">
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <div className="relative overflow-hidden w-[140px] h-[72px] md:w-[180px] md:h-[93px]">
             <img
               src="/logo.svg"
@@ -59,26 +54,26 @@ export default function Navbar() {
               className="absolute h-auto w-[140px] top-[-39px] md:w-[180px] md:top-[-50px]"
             />
           </div>
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((l) => (
-            <a
+          {NAV_LINKS.map((l) => (
+            <Link
               key={l.href}
               href={l.href}
               className="text-gray-400 hover:text-white text-sm transition-colors"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
 
-        <a
-          href="#kontakt"
-          className="hidden md:flex items-center gap-1.5 bg-brand hover:bg-[#e05400] text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+        <Link
+          href={CONTACT_HREF}
+          className="hidden md:flex items-center gap-1.5 bg-brand hover:bg-brand-hover text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
         >
           Kontakt <ArrowRight className="w-3.5 h-3.5" />
-        </a>
+        </Link>
 
         <MobileNav />
       </nav>

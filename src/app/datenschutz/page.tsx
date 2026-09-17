@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import SitePageChrome from "../components/SitePageChrome";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung – NP Solution GmbH",
@@ -42,36 +43,19 @@ function DSSection({
 
 export default function DatenschutzPage() {
   return (
-    <div className="bg-[#090909] text-white min-h-screen font-sans">
+    <SitePageChrome activeFooterLink="datenschutz">
+      <BackLink />
 
-      {/* Minimal top bar */}
-      <header className="border-b border-white/5 bg-[#090909]/85 backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-3xl mx-auto px-6 py-4 flex items-center">
-          <Link href="/" className="flex items-center">
-            <div className="relative overflow-hidden w-[140px] h-[72px] md:w-[180px] md:h-[93px]">
-              <img
-                src="/logo.svg"
-                alt="NP Solution GmbH"
-                className="absolute h-auto w-[140px] top-[-39px] md:w-[180px] md:top-[-50px]"
-              />
-            </div>
-          </Link>
+      <div className="mb-14">
+        <div className="flex items-center gap-3 mb-5">
+          <span className="text-brand text-xs font-semibold tracking-widest uppercase">Rechtliches</span>
+          <span className="w-8 h-px bg-brand/40" />
         </div>
-      </header>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Datenschutzerklärung</h1>
+        <p className="text-gray-500 text-sm">Stand: Juni 2026</p>
+      </div>
 
-      <main className="max-w-3xl mx-auto px-6 py-20">
-        <BackLink />
-
-        <div className="mb-14">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="text-brand text-xs font-semibold tracking-widest uppercase">Rechtliches</span>
-            <span className="w-8 h-px bg-brand/40" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Datenschutzerklärung</h1>
-          <p className="text-gray-500 text-sm">Stand: Juni 2026</p>
-        </div>
-
-        <div className="bg-[#111] border border-white/5 rounded-2xl px-8 divide-y divide-white/5">
+      <div className="bg-[#111] border border-white/5 rounded-2xl px-8 divide-y divide-white/5">
 
           <DSSection number="1." title="Verantwortlicher">
             <address className="not-italic space-y-1">
@@ -196,17 +180,6 @@ export default function DatenschutzPage() {
           </DSSection>
 
         </div>
-      </main>
-
-      <footer className="border-t border-white/5 py-10 px-6 mt-8">
-        <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-600">
-          <p>© 2026 NP Solution GmbH · Schaan, Liechtenstein</p>
-          <div className="flex gap-5">
-            <Link href="/impressum" className="hover:text-gray-400 transition-colors">Impressum</Link>
-            <Link href="/datenschutz" className="text-brand/70 hover:text-brand transition-colors">Datenschutz</Link>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </SitePageChrome>
   );
 }
