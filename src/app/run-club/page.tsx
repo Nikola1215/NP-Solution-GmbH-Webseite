@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import SitePageChrome from "../components/SitePageChrome";
 import RunClubForm from "../components/RunClubForm";
+import RunClubInfoBlocks from "../components/RunClubInfoBlocks";
+import { ArrowRight } from "../components/icons";
 
 const TITLE = "NP Run Club – Lunch Runs in Schaan";
 const DESCRIPTION =
@@ -33,9 +35,18 @@ export default function RunClubPage() {
           Der NP Run Club bringt Menschen aus dem Industriegebiet Schaan und der Umgebung für
           gemeinsame Lunch Runs zusammen.
         </p>
+
+        <RunClubInfoBlocks className="mt-8 max-w-xl mx-auto" />
+
+        <a
+          href="#anmeldung"
+          className="mt-8 inline-flex items-center gap-2 bg-brand hover:bg-brand-hover text-white font-semibold px-6 py-3.5 rounded-xl transition-all hover:shadow-[0_0_40px_-8px_#FF5F00]"
+        >
+          Auf die Warteliste <ArrowRight />
+        </a>
       </div>
 
-      <div className="bg-[#111] border border-white/5 rounded-2xl p-8 md:p-10">
+      <div id="anmeldung" className="bg-[#111] border border-white/5 rounded-2xl p-8 md:p-10">
         <h2 className="text-lg font-semibold text-white mb-1 text-center">Auf die Warteliste</h2>
         <p className="text-sm text-gray-500 mb-8 text-center">Ich bin dabei, sobald es losgeht.</p>
         <RunClubForm />

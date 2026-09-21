@@ -5,6 +5,16 @@ import Link from "next/link";
 import MobileNav from "./MobileNav";
 import { NAV_LINKS, CONTACT_HREF } from "./nav-links";
 
+// Navbar wird nur auf der Startseite gerendert: ein Klick auf das Logo navigiert
+// technisch zur selben Route ("/"), was Next.js nicht automatisch nach oben scrollt.
+// Deshalb hier manuell scrollen (respektiert prefers-reduced-motion ueber die
+// globale CSS-Regel in globals.css), Modifier-Klicks (neuer Tab etc.) bleiben unberuehrt.
+function handleLogoClick(e: React.MouseEvent<HTMLAnchorElement>) {
+  if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function ArrowRight({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -46,7 +56,7 @@ export default function Navbar() {
       }}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative">
-        <Link href="/" className="flex items-center">
+        <Link href="/" onClick={handleLogoClick} className="flex items-center">
           <div className="relative overflow-hidden w-[140px] h-[72px] md:w-[180px] md:h-[93px]">
             <img
               src="/logo.svg"

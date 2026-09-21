@@ -31,20 +31,14 @@ export default function HeroHeadline() {
       ref={ref}
       className="text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[3.6rem] xl:text-7xl font-bold tracking-tight leading-[1.08] mb-6"
     >
-      Industrieanlagen.{" "}
+      Wir nehmen Ihre Anlage
+      <br className="hidden sm:block" />
+      {" "}
       <span
         className={sweepClass}
         style={{ "--sweep-delay": "0.3s" } as React.CSSProperties}
       >
-        In Betrieb.
-      </span>
-      <br className="hidden md:block" />
-      {" "}Umgebaut.{" "}
-      <span
-        className={sweepClass}
-        style={{ "--sweep-delay": "0.8s" } as React.CSSProperties}
-      >
-        Weitergedacht.
+        in Betrieb.
       </span>
     </h1>
   );

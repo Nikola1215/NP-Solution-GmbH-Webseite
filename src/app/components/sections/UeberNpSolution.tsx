@@ -32,7 +32,7 @@ export default function UeberNpSolution() {
 
         <div className="grid lg:grid-cols-[260px_1fr] gap-10 mb-14">
           <ScaleIn className="flex flex-col items-center gap-5">
-            {/* Uebergangsfoto: Freizeitfoto bis ein professionelles Industrie-/Portraitfoto vorliegt (siehe BRIEFING.md Punkt 14) */}
+            {/* Portrait des Gruenders */}
             <div
               className="relative w-full max-w-[220px] lg:max-w-none mx-auto aspect-[3/4] rounded-2xl overflow-hidden"
               style={{ boxShadow: "0 0 0 2px rgba(255,95,0,0.35), 0 0 32px -4px rgba(255,95,0,0.25)" }}
@@ -48,27 +48,21 @@ export default function UeberNpSolution() {
             </div>
             <div className="text-center">
               <p className="font-semibold text-white">Nikola Prvujkic</p>
-              <p className="text-sm text-brand">Gründer NP Solution GmbH</p>
+              <p className="text-sm text-brand">Gründer & Geschäftsführer</p>
             </div>
           </ScaleIn>
 
           <SlideFromRight className="flex items-center">
             <div className="text-gray-400 text-lg leading-relaxed space-y-4">
               <p>
-                NP Solution wurde von Nikola Prvujkic gegründet – Automatiker EFZ mit
-                mehrjähriger Erfahrung in Inbetriebnahme, Automation und industrieller
-                Systemtechnik.
+                NP Solution GmbH wurde von Nikola Prvujkic gegründet. Als Automatiker EFZ bringt
+                er über sieben Jahre Erfahrung in der Inbetriebnahme sowie bei elektrischen
+                Arbeiten, Umbauten und Erweiterungen an Maschinen und Industrieanlagen mit.
               </p>
               <p>
-                Der berufliche Hintergrund liegt direkt an Maschinen und Industrieanlagen – von
-                Inbetriebnahmen über elektrische Anpassungen bis zu Umbauten und technischen
-                Erweiterungen.
-              </p>
-              <p>
-                Mit NP Solution wird diese praktische Erfahrung mit modernen digitalen
-                Werkzeugen verbunden. Dabei geht es nicht um möglichst komplexe Lösungen,
-                sondern darum, technische und betriebliche Abläufe einfacher, zuverlässiger und
-                effizienter zu machen.
+                Diese praktische Erfahrung bildet die Basis von NP Solution GmbH. Ergänzt wird
+                sie durch moderne digitale Werkzeuge und Smart Automation – immer mit dem Ziel,
+                Abläufe einfacher, zuverlässiger und effizienter zu machen.
               </p>
             </div>
           </SlideFromRight>
@@ -82,15 +76,15 @@ export default function UeberNpSolution() {
                   <EducationIcon />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">Ausbildung</h3>
-                  <p className="text-sm text-brand/80 mt-0.5">Gelernter Automatiker EFZ</p>
+                  <h3 className="text-lg font-bold">Technischer Hintergrund</h3>
+                  <p className="text-sm text-brand/80 mt-0.5">Automation & Industrie</p>
                 </div>
               </div>
               <ul className="space-y-4">
                 {[
-                  "Inbetriebnahme und Optimierung von Maschinen",
-                  "Über 7 Jahre Berufserfahrung",
-                  "Technisches Verständnis und praxisnahe Lösungen",
+                  "Automatiker EFZ",
+                  "Über 7 Jahre Erfahrung in Automation und Inbetriebnahme",
+                  "Praxis direkt an Maschinen und Industrieanlagen",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="w-5 h-5 rounded-md bg-brand/10 flex items-center justify-center shrink-0">
@@ -110,15 +104,15 @@ export default function UeberNpSolution() {
                   <InitiativeIcon />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">Eigeninitiative</h3>
-                  <p className="text-sm text-brand/80 mt-0.5">Digitalisierung & Smart Automation</p>
+                  <h3 className="text-lg font-bold">Digitale Kompetenz</h3>
+                  <p className="text-sm text-brand/80 mt-0.5">Smart Automation</p>
                 </div>
               </div>
               <ul className="space-y-4">
                 {[
-                  "Automatisierung wiederkehrender Prozesse",
-                  "Digitale Werkzeuge für konkrete Abläufe",
-                  "Schnittstellen zwischen bestehenden Systemen",
+                  "Automatisierung wiederkehrender Abläufe",
+                  "Einfache digitale Tools für konkrete Aufgaben",
+                  "Daten und Schnittstellen zwischen bestehenden Systemen",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-gray-300 text-sm">
                     <span className="w-5 h-5 rounded-md bg-brand/10 flex items-center justify-center shrink-0">

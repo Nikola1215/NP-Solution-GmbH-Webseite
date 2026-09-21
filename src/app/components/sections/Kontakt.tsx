@@ -13,7 +13,12 @@ export default function Kontakt() {
             Projekt <span className="text-brand">besprechen.</span>
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed max-w-xl mx-auto">
-            Erzählen Sie uns kurz, worum es geht. Wir melden uns persönlich zurück.
+            Schildern Sie uns kurz Ihr Vorhaben oder Ihre Aufgabenstellung. Wir melden uns
+            persönlich bei Ihnen zurück.
+          </p>
+          <p className="text-gray-500 text-sm leading-relaxed max-w-xl mx-auto mt-3">
+            Sie möchten lieber persönlich vorbeikommen? Gerne setzen wir uns bei uns in Schaan
+            auf einen Kaffee zusammen und besprechen Ihr Anliegen in Ruhe.
           </p>
         </div>
 
@@ -34,6 +39,7 @@ export default function Kontakt() {
               9494 Schaan<br />
               Liechtenstein
             </address>
+            <p className="text-xs text-gray-500">Termine vor Ort nach Vereinbarung.</p>
           </a>
 
           <div className="group bg-[#111] border border-white/5 hover:border-[#25D366]/50 rounded-xl p-6 transition-colors flex flex-col gap-3">
@@ -78,6 +84,7 @@ export default function Kontakt() {
             <span className="block text-sm text-brand font-medium">
               info@np-solution.li
             </span>
+            <p className="text-xs text-gray-500">Für Anfragen und Unterlagen.</p>
           </a>
         </div>
 

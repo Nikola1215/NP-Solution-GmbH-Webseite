@@ -59,8 +59,9 @@ export default function IndustrieserviceOverview() {
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">Industrieservice & Automation</h3>
                   <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">
-                    Technische Unterstützung direkt an Maschinen und Industrieanlagen – von der
-                    elektrischen Umsetzung bis zur erfolgreichen Inbetriebnahme.
+                    Wir unterstützen Anlagenbauer und Industrieunternehmen direkt an Maschinen und
+                    Anlagen – bei Inbetriebnahmen, elektrischen Arbeiten, Umbauten, Revisionen und
+                    technischen Anpassungen.
                   </p>
                   <ul className="flex flex-wrap gap-2 mt-6">
                     {LEISTUNGEN.map((l) => (
@@ -71,7 +72,7 @@ export default function IndustrieserviceOverview() {
                   </ul>
                 </div>
                 <div className="mt-8 flex items-center gap-1.5 text-brand text-sm font-medium">
-                  Mehr erfahren <ArrowRight className="w-4 h-4" />
+                  Industrieservice ansehen <ArrowRight className="w-4 h-4" />
                 </div>
               </a>
             </HoverLift>
@@ -92,11 +93,13 @@ export default function IndustrieserviceOverview() {
                     <span className="text-xs text-brand font-mono font-medium">02</span>
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Smart Automation</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                    Wir entwickeln einfache digitale Lösungen für wiederkehrende Abläufe. Damit
+                    lassen sich Prozesse vereinfachen, Zeit sparen und Fehler reduzieren.
+                  </p>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Schlanke digitale Lösungen für konkrete Prozesse – entwickelt, um Zeit zu
-                    sparen, Fehler zu reduzieren und wiederkehrende Arbeit zu vereinfachen. Von
-                    automatisierten Workflows bis zu einfachen internen Tools verbindet NP
-                    Solution bestehende Abläufe mit smarten digitalen Werkzeugen.
+                    Von automatisierten Workflows bis zu kleinen internen Tools – immer passend
+                    zum konkreten Anwendungsfall.
                   </p>
                   <ul className="flex flex-wrap gap-2 mt-5">
                     {SMART_AUTOMATION_TAGS.map((t) => (
@@ -107,7 +110,7 @@ export default function IndustrieserviceOverview() {
                   </ul>
                 </div>
                 <div className="mt-6 flex items-center gap-1.5 text-brand text-sm font-medium">
-                  Mehr erfahren <ArrowRight className="w-4 h-4" />
+                  Smart Automation ansehen <ArrowRight className="w-4 h-4" />
                 </div>
               </a>
             </HoverLift>

@@ -10,7 +10,6 @@ import UeberNpSolution from "./components/sections/UeberNpSolution";
 import Arbeitsweise from "./components/sections/Arbeitsweise";
 import Standort from "./components/sections/Standort";
 import RunClubTeaser from "./components/sections/RunClubTeaser";
-import ProjektCta from "./components/sections/ProjektCta";
 import Kontakt from "./components/sections/Kontakt";
 import SiteFooter from "./components/sections/SiteFooter";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -43,7 +42,6 @@ export default function Home() {
       <Arbeitsweise />
       <Standort />
       <RunClubTeaser />
-      <ProjektCta />
       <Kontakt />
       <WhatsAppButton />
       <CookieBanner />

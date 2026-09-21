@@ -1,5 +1,6 @@
 import ImagePlaceholder from "../ImagePlaceholder";
 import { FadeUp, StaggerContainer, StaggerItem, HoverLift } from "../motion-primitives";
+import { SHOW_PROJEKTE_SECTION } from "../../site-config";
 
 type ProjektKarte = {
   titel: string;
@@ -8,7 +9,8 @@ type ProjektKarte = {
 };
 
 // Platzhalter-Struktur fuer echte Referenzprojekte (siehe BRIEFING.md Punkt 11 / 26).
-// Keine echten Kunden/Projekte erfinden - sobald reale Projekte vorliegen, hier ersetzen.
+// Keine echten Kunden/Projekte erfinden - sobald reale Projekte (mit Bildern und
+// Kundenfreigabe) vorliegen, hier eintragen/ersetzen.
 const PROJEKTE: ProjektKarte[] = [
   {
     titel: "Inbetriebnahme Produktionsanlage",
@@ -23,6 +25,12 @@ const PROJEKTE: ProjektKarte[] = [
 ];
 
 export default function Projekte() {
+  // Sektion vorübergehend ausgeblendet, bis echte Projekte mit Bildern und
+  // Kundenfreigabe vorliegen. Wieder aktivieren: SHOW_PROJEKTE_SECTION in
+  // src/app/site-config.ts auf true setzen (blendet automatisch auch den
+  // Nav-Punkt "Projekte" wieder ein, siehe nav-links.ts).
+  if (!SHOW_PROJEKTE_SECTION) return null;
+
   return (
     <section id="projekte" className="py-24 px-6 border-b border-white/5">
       <div className="max-w-6xl mx-auto">

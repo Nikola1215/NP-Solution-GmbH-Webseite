@@ -19,7 +19,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-500">
-          {NAV_LINKS.filter((l) => l.label !== "Start").map((l) => (
+          {NAV_LINKS.map((l) => (
             <Link key={l.href} href={l.href} className="hover:text-white transition-colors">
               {l.label}
             </Link>
